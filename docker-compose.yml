@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    restart: unless-stopped
+    networks:
+      - ms-net
+networks:
+  ms-net:
+    external: true

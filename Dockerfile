@@ -10,7 +10,8 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 2. Run Stage
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre-jammy
+
 
 WORKDIR /app
 COPY --from=build /app/target/eureka-server-0.0.1-SNAPSHOT.jar app.jar
